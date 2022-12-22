@@ -57,3 +57,11 @@ app.post("/api/notes", (req, res) => {
     res.json("Error in posting notes");
   }
 });
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/index.html"));
+  });
+  
+  app.listen(PORT, () => {
+    console.log(`NoteTaker listening to  port 3002`);
+  });
